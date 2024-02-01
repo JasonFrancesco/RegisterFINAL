@@ -23,3 +23,12 @@ Route::post('register', [UserController::class, 'register_action'])->name('regis
 
 Route::get('login', [UserController::class, 'login'])->name('login');
 Route::post('login', [UserController::class, 'login_action'])->name('login.action');
+
+Route::get('team', [TeamController::class, 'viewTeam'])->name('viewTeam');
+Route::post('team', [TeamController::class, 'createTeam'])->name('createTeam');
+Route::patch('team', [TeamController::class, 'updateTeam'])->name('updateTeam');
+Route::delete('team', [TeamController::class, 'deleteTeam'])->name('deleteTeam');
+
+Route::get('/admin', function () {
+    return view('admin');
+})->name('admin');
